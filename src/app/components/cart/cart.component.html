@@ -10,6 +10,7 @@
                             <th class="text-center" scope="col">Image</th>
                             <th class="text-center" scope="col">Description</th>
                             <th class="text-center" scope="col">Price</th>
+                            <th class="text-center" scope="col">Cantidad</th>
                             <th class="text-center" scope="col">Action</th>
                         </tr>
                     </thead>
@@ -20,6 +21,7 @@
                             <td  class="text-center" data-title="imagen"><img style="width: 120px;" src="{{item.image}}" alt=""></td>
                             <td  class="text-center" data-title="description" style="width: 25%;">{{item.description}}</td>
                             <th  class="text-center" data-title="price" >{{item.price}}</th>
+                            <th  class="text-center" data-title="cantidad" >1</th>
                             <td>
                                 <button (click)="removeItem(item)" class="cancel-btn">Delete</button>
                             </td>
