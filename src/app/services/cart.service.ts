@@ -26,22 +26,25 @@ export class CartService {
   }
   addtoCart(product: any) {
     debugger;
-    this.cartItemList.push(product);
-    this.productList.next(this.cartItemList);
-    this.getTotalPrice();
-    debugger;
-    this.toastr.success('add to cart successfully', 'OK', {
-      positionClass: 'toast-bottom-right',
-      timeOut: 1000
-   });
-    console.log(this.cartItemList)
+    const check_index = this.cartItemList.findIndex((item: { id: number; }) => item.id === product.id);
+    if (check_index !== -1) {
+      this.cartItemList[check_index].quantity++;
+      this.toastr.success('The quantity was updated', 'OK', {positionClass: 'toast-bottom-right',timeOut: 1000 });
+    }else{
+      this.cartItemList.push({...product, quantity: 1});
+      this.productList.next(this.cartItemList);
+      this.getTotalPrice();
+    }
+
+    this.toastr.success('add to cart successfully', 'OK', {positionClass: 'toast-bottom-right',timeOut: 1000 });
+   
   }
   getTotalPrice(): number {
-    let grandTotal = 0;
+    let totalPrice = 0;
     this.cartItemList.map((a: any) => {
-      grandTotal += a.total;
+      totalPrice += (a.price*a.quantity);
     })
-    return grandTotal;
+    return totalPrice;
   }
   removeCartItem(product: any) {
     this.cartItemList.map((a: any, index: any) => {

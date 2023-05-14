@@ -14,15 +14,15 @@ import { ngxCsv } from 'ngx-csv/ngx-csv';
 export class CartComponent implements OnInit {
 
   public products : any = [];
-  public grandTotal !: number;
+  public totalPrice !: number;
 
   constructor(private cartService : CartService) { }
 
   ngOnInit(): void {
-    this.cartService.getProducts()
-    .subscribe(res=>{
+    this.cartService.getProducts().subscribe(res=>{
+      debugger;
       this.products = res;
-      this.grandTotal = this.cartService.getTotalPrice();
+      this.totalPrice = this.cartService.getTotalPrice();
     })
   }
   removeItem(item: any){

@@ -21,7 +21,7 @@
                             <td  class="text-center" data-title="imagen"><img style="width: 120px;" src="{{item.image}}" alt=""></td>
                             <td  class="text-center" data-title="description" style="width: 25%;">{{item.description}}</td>
                             <th  class="text-center" data-title="price" >{{item.price}}</th>
-                            <th  class="text-center" data-title="cantidad" >1</th>
+                            <th  class="text-center" data-title="cantidad" >{{item.quantity}}</th>
                             <td>
                                 <button (click)="removeItem(item)" class="cancel-btn">Delete</button>
                             </td>
@@ -30,6 +30,7 @@
                             <td colspan="4"></td>
                             <td><button (click)="emptycart()" class="normal-btn">Empty Cart</button></td>
                             <td><button (click)="saveData()" class="normal-btn">save data</button></td>
+                            <td><strong>Total price: ${{totalPrice}}</strong></td>
                         </tr>
                     </tbody>
                 </table>

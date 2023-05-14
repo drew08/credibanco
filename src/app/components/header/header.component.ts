@@ -22,7 +22,6 @@ export class HeaderComponent implements OnInit, DoCheck {
 
   ngDoCheck(): void {
     let currentroute = this.route.url;
-    debugger;
     if (currentroute == '/home' || currentroute == "/") {
       this.isMenuVisible = true
     } else {
@@ -32,7 +31,6 @@ export class HeaderComponent implements OnInit, DoCheck {
  
   ngOnInit(): void {
     this.cartService.getProducts().subscribe(res =>{
-      debugger;
         this.totalCount = res.length;
         console.log(this.totalCount);
     })
