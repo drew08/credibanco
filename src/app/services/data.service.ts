@@ -34,7 +34,7 @@ export class DataService {
 
   getProductsInCategory(categori: string) {
     debugger;
-    return this.http.get(`${this.baseURL}/categories/${categori}`);
+    return this.http.get(`${this.baseURL}/category/${categori}`);
   }
 
 

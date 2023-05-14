@@ -58,6 +58,15 @@ export class ProductComponent implements OnInit {
 
   }
 
+  getProductsInCategory(product: string) {
+    debugger;
+    this.dataService.getProductsInCategory(product).subscribe((result: any) => {
+      this.productList = result;
+      console.log(result);
+    });
+
+  }
+
   addtocart(item: any) {
     this.cartService.addtoCart(item);
   }
