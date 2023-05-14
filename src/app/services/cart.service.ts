@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
-import { ToastrModule } from 'ngx-toastr';
 import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
@@ -29,20 +28,20 @@ export class CartService {
     const check_index = this.cartItemList.findIndex((item: { id: number; }) => item.id === product.id);
     if (check_index !== -1) {
       this.cartItemList[check_index].quantity++;
-      this.toastr.success('The quantity was updated', 'OK', {positionClass: 'toast-bottom-right',timeOut: 1000 });
-    }else{
-      this.cartItemList.push({...product, quantity: 1});
+      this.toastr.success('The quantity was updated', 'OK', { positionClass: 'toast-bottom-right', timeOut: 1000 });
+    } else {
+      this.cartItemList.push({ ...product, quantity: 1 });
       this.productList.next(this.cartItemList);
       this.getTotalPrice();
     }
 
-    this.toastr.success('add to cart successfully', 'OK', {positionClass: 'toast-bottom-right',timeOut: 1000 });
-   
+    this.toastr.success('add to cart successfully', 'OK', { positionClass: 'toast-bottom-right', timeOut: 1000 });
+
   }
   getTotalPrice(): number {
     let totalPrice = 0;
     this.cartItemList.map((a: any) => {
-      totalPrice += (a.price*a.quantity);
+      totalPrice += (a.price * a.quantity);
     })
     return totalPrice;
   }

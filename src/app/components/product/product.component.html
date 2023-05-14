@@ -1,22 +1,23 @@
 <div class="container">
     <h1>CATEGORIES</h1>
     <div class="categories">
-        <ul *ngFor="let cat of categoriesList" >
-            <li><a (click)="getProductsInCategory(cat)" >{{cat}}</a></li>
+        <ul *ngFor="let cat of categoriesList">
+            <li><a (click)="getProductsInCategory(cat)">{{cat}}</a></li>
         </ul>
     </div>
 </div>
 
- <div class="container padding-top">
+<div class="container padding-top">
     <div class="row-card">
 
-      <div class="columns padding-top" *ngFor="let product of productList | filter:searchKey:'title'   ; let ind=index">
-            <div class="card  text-dark" >             
-                <img src={{product.image}} class="img-fluid card-img" alt="Responsive Card image cap">                   
+        <div class="columns padding-top"
+            *ngFor="let product of productList | filter:searchKey:'title'   ; let ind=index">
+            <div class="card  text-dark">
+                <img src={{product.image}} class="img-fluid card-img" alt="Responsive Card image cap">
                 <div class="overlay-text image-box">
                     <label class="card-data-label">#:</label>
                     <p class="card-data-text ">&nbsp;{{product.id }}</p>
-                </div>       
+                </div>
                 <div class="card-body">
                     <div class="card-title">
                         <p class="card-text-name">{{product.title | uppercase }}</p>
@@ -31,19 +32,20 @@
                         </div>
                     </div>
                     <div class="padding-top">
-                         <button type="button" (click)=addtocart(product) class="card-btn  btn">Add<span>&rarr;</span></button>
+                        <button type="button" (click)=addtocart(product)
+                            class="card-btn  btn">Add<span>&rarr;</span></button>
                     </div>
                 </div>
             </div>
-      </div>
-     
+        </div>
+
     </div>
     <div class="button-area">
-        <button type="button" class="prev control-btn" appPrev>Prev</button>   
-        <button type="button" class="next control-btn" appNext>Next</button>   
+        <button type="button" class="prev control-btn" appPrev>Prev</button>
+        <button type="button" class="next control-btn" appNext>Next</button>
     </div>
-  
-  </div> 
+
+</div>
 
 <!-- <section class="product-sec">
     <div class="container">

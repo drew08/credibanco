@@ -44,7 +44,11 @@ export class ProductComponent implements OnInit {
     this.dataService.getData().subscribe((result: any) => {
       this.productList = result;
       console.log(result);
-    });
+    },
+      (error: any) => {
+        console.error('error service')
+      }
+    );
 
   }
 
@@ -54,7 +58,11 @@ export class ProductComponent implements OnInit {
     this.dataService.getAllCategories().subscribe((result: any) => {
       this.categoriesList = result;
       console.log(result);
-    });
+    },
+      (error: any) => {
+        console.error('error service')
+      }
+    );
 
   }
 
@@ -62,8 +70,11 @@ export class ProductComponent implements OnInit {
     debugger;
     this.dataService.getProductsInCategory(product).subscribe((result: any) => {
       this.productList = result;
-      console.log(result);
-    });
+    },
+      (error: any) => {
+        console.error('error service')
+      }
+    );
 
   }
 
