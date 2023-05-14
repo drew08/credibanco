@@ -4,7 +4,7 @@
       <div class="columns padding-top" *ngFor="let product of productList | filter:searchKey:'title'   ; let ind=index">
             <div class="card  text-dark" >             
                 <img src={{product.image}} class="img-fluid card-img" alt="Responsive Card image cap">                   
-                <div class="d-flex overlay-text image-box">
+                <div class="overlay-text image-box">
                     <label class="card-data-label">#:</label>
                     <p class="card-data-text ">&nbsp;{{product.id }}</p>
                 </div>       

@@ -2,33 +2,32 @@
     <div class="container">
         <div class="card-table">
             <div class="cart-product">
-                <table class="product-table">
+                <table class="product-table product-table-responsive">
                     <thead>
                         <tr>
-                            <th>N°</th>
-                            <th>Title</th>
-                            <th>Image</th>
-                            <th>Description</th>
-                            <th>Price</th>
-                            <th>Action</th>
+                            <th class="text-center" scope="col">N°</th>
+                            <th class="text-center" scope="col">Title</th>
+                            <th class="text-center" scope="col">Image</th>
+                            <th class="text-center" scope="col">Description</th>
+                            <th class="text-center" scope="col">Price</th>
+                            <th class="text-center" scope="col">Action</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr *ngFor="let item of products; let i = index">
-                            <td>{{item.id}}</td>
-                            <td>{{item.title}}</td>
-                            <td><img style="width: 120px;" src="{{item.image}}" alt=""></td>
-                            <td style="width: 25%;">{{item.description}}</td>
-                            <th style="width: 12%;">{{item.price}}</th>
+                            <td  class="text-center" data-title="num" scope="row">{{item.id}}</td>
+                            <td  class="text-center" data-title="title">{{item.title}}</td>
+                            <td  class="text-center" data-title="imagen"><img style="width: 120px;" src="{{item.image}}" alt=""></td>
+                            <td  class="text-center" data-title="description" style="width: 25%;">{{item.description}}</td>
+                            <th  class="text-center" data-title="price" >{{item.price}}</th>
                             <td>
-                                <button (click)="removeItem(item)" class="btn btn-danger">Delete</button>
+                                <button (click)="removeItem(item)" class="cancel-btn">Delete</button>
                             </td>
                         </tr>
                         <tr>
-                            <td colspan="3"></td>
-                            <td><button (click)="emptycart()" class="btn-table">Empty Cart</button></td>
-                            <td><button routerLink="/home" class="btn-tabl">Home</button></td>
-                            <td><button (click)="saveData()" class="btn-table">save data</button></td>
+                            <td colspan="4"></td>
+                            <td><button (click)="emptycart()" class="normal-btn">Empty Cart</button></td>
+                            <td><button (click)="saveData()" class="normal-btn">save data</button></td>
                         </tr>
                     </tbody>
                 </table>
@@ -39,13 +38,10 @@
 
 
 <ng-container *ngIf="products.length ==0">
-    <div class="container">
-        <div class="card">
-            <h5 class="card-title">My Cart</h5>
-        </div>
+    <div class="container-box">
         <div class="center">
             <h4>Your cart is empty!</h4>
-            <button routerLink="/home" class="btn btn-primary">back</button>
+            <button routerLink="/home" class="normal-btn">Back</button>
         </div>
     </div>
 </ng-container>

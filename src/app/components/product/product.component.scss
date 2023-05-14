@@ -1,3 +1,5 @@
+@import 'src/main-colors.scss';
+
 .row-card {
     display: flex;
     // flex-wrap: wrap;
@@ -100,7 +102,9 @@ p {
     padding-right: 1rem !important;
     padding-left: 1rem !important;
     border-radius: 500px;
-    background-color: white;
+    background-color: $color_4;
+    color: #fff;
+    height: 18px;
 }
 
 .image-box p {
@@ -228,4 +232,23 @@ p {
 .d-flex {
 
     display: flex!important;
+}
+
+
+@media (max-width: 768px) {
+    .button-area{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .prev {
+        top: 22% !important;
+    }
+    
+    .next {
+        top: 22% !important;
+    }
+    
+
 }

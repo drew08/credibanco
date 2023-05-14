@@ -1,8 +1,11 @@
 import { Injectable } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
+import { ToastrModule } from 'ngx-toastr';
 import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
+
 })
 export class CartService {
 
@@ -10,7 +13,7 @@ export class CartService {
   public productList = new BehaviorSubject<any>([]);
   public search = new BehaviorSubject<string>("");
 
-  constructor() { }
+  constructor(private toastr: ToastrService,) { }
   getProducts() {
     debugger;
     return this.productList.asObservable();
@@ -22,10 +25,15 @@ export class CartService {
     this.productList.next(product);
   }
   addtoCart(product: any) {
+    debugger;
     this.cartItemList.push(product);
     this.productList.next(this.cartItemList);
     this.getTotalPrice();
     debugger;
+    this.toastr.success('add to cart successfully', 'OK', {
+      positionClass: 'toast-bottom-right',
+      timeOut: 1000
+   });
     console.log(this.cartItemList)
   }
   getTotalPrice(): number {
@@ -42,6 +50,7 @@ export class CartService {
       }
     })
     this.productList.next(this.cartItemList);
+
   }
   removeAllCart() {
     this.cartItemList = []
