@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CartService } from 'src/app/services/cart.service';
 import { RouterModule } from '@angular/router';
+import { ngxCsv } from 'ngx-csv/ngx-csv';
 
 @Component({
   selector: 'app-cart',
@@ -29,6 +30,23 @@ export class CartComponent implements OnInit {
   }
   emptycart(){
     this.cartService.removeAllCart();
+  }
+
+
+  saveData(){
+    var options = { 
+      fieldSeparator: ',',
+      quoteStrings: '"',
+      decimalseparator: '.',
+      showLabels: false, 
+      showTitle: false,
+      title: 'my_cart_products',
+      useBom: false,
+      noDownload: false,
+      headers: ["id", "title", "price", "description", "category", "image", "rating"]
+    };
+
+    new ngxCsv(this.products, 'MyCart', options);
   }
 
 }
