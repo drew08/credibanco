@@ -39,10 +39,10 @@ export class ProductComponent implements OnInit {
   }
 
   getData() {
-    debugger;
+   
     this.dataService.getData().subscribe((result: any) => {
       this.productList = result;
-      console.log(result);
+      
     },
       (error: any) => {
         console.error('error service')
@@ -52,10 +52,10 @@ export class ProductComponent implements OnInit {
 
 
   getAllCategories() {
-    debugger;
+    
     this.dataService.getAllCategories().subscribe((result: any) => {
       this.categoriesList = result;
-      console.log(result);
+    
     },
       (error: any) => {
         console.error('error service')
@@ -65,7 +65,7 @@ export class ProductComponent implements OnInit {
   }
 
   getProductsInCategory(product: string, index: number) {
-    debugger;
+   
     this.selectedIndex = index;
     this.dataService.getProductsInCategory(product).subscribe((result: any) => {
       this.productList = result;

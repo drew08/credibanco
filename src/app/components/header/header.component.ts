@@ -32,7 +32,7 @@ export class HeaderComponent implements OnInit, DoCheck {
   ngOnInit(): void {
     this.cartService.getProducts().subscribe(res => {
       this.totalCount = res.length;
-      console.log(this.totalCount);
+  
     })
 
   }
@@ -43,7 +43,7 @@ export class HeaderComponent implements OnInit, DoCheck {
 
     this.searchTerm = (event.target as HTMLInputElement).value;
     this.dataService.search.next(this.searchTerm);
-    console.log(this.searchTerm);
+   
   }
 
 }
