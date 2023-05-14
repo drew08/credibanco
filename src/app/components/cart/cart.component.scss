@@ -9,6 +9,7 @@
 
 .text-center {
     text-align: center;
+    text-align: justify;
 }
 
 
@@ -59,26 +60,42 @@ $faded-yellow: lighten(#f1c40f, 40%);
    
     @media (max-width: 768px) {
         max-width: 300px;
-        width: 80%;
+       // width: auto;
         margin: 0 auto 0;
         max-height: 500px;
         overflow-y: scroll;
         position: relative;
         transition: all .2s ease-out;
-      background: white;
-      box-shadow: $shadow;
+        background: white;
+        box-shadow: $shadow;
+
+        overflow-x: hidden !important;
+        width: 100vw !important;
 
     }
   }
 
+
+  //responsive
   @media (max-width: 768px) {
 
+    .cancel-btn {
+      width: 60% !important;
+
+    }
+
+    .normal-btn {
+      width: 60% !important;
+
+    }
+
+
     .container {
-        width: 100%;
-        padding-right: 2rem;
-        padding-left: 2rem;
-        margin-right: auto;
-        margin-left: auto;
+        width: unset !important;
+        padding-right: unset !important;
+        padding-left: unset !important;
+        margin-right: unset !important;
+        margin-left: unset !important;
        }
 
     .product-table-responsive {

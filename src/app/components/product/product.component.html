@@ -23,10 +23,10 @@
                         <p class="card-text-name">{{product.title | uppercase }}</p>
                     </div>
                     <div class="card-data">
-                        <div class="d-flex ">
+                        <div class="flex  ">
                             <p class="card-data-text card--desc ">&nbsp;{{product?.description}}</p>
                         </div>
-                        <div class="d-flex padding-top">
+                        <div class="padding-top">
                             <label class="card-data-label price">Price: </label>
                             <p class="card-data-text card--price">&nbsp;${{product?.price}}</p>
                         </div>
@@ -40,7 +40,7 @@
         </div>
 
     </div>
-    <div class="button-area">
+    <div class="button-area hidden-mobile">
         <button type="button" class="prev control-btn" appPrev>Prev</button>
         <button type="button" class="next control-btn" appNext>Next</button>
     </div>

@@ -33,9 +33,8 @@ export class CartService {
       this.cartItemList.push({ ...product, quantity: 1 });
       this.productList.next(this.cartItemList);
       this.getTotalPrice();
+      this.toastr.success('add to cart successfully', 'OK', { positionClass: 'toast-bottom-right', timeOut: 1000 });
     }
-
-    this.toastr.success('add to cart successfully', 'OK', { positionClass: 'toast-bottom-right', timeOut: 1000 });
 
   }
   getTotalPrice(): number {

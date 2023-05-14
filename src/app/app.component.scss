@@ -12,7 +12,11 @@
   @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
     .main-container {
         padding: 1rem !important;
+        overflow-x: hidden !important;
+        width: 100vw !important;
     }
+
+    
   }
   
   * {
