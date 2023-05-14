@@ -1,8 +1,8 @@
 <div class="container">
     <h1>CATEGORIES</h1>
     <div class="categories">
-        <ul *ngFor="let cat of categoriesList">
-            <li><a (click)="getProductsInCategory(cat)">{{cat}}</a></li>
+        <ul *ngFor="let cat of categoriesList; let i = index;" >
+            <li  ><a (click)="getProductsInCategory(cat, i)" [ngClass]="{'active-tab': selectedIndex === i}">{{cat}}</a></li>
         </ul>
     </div>
 </div>

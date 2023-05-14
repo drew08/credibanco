@@ -38,7 +38,7 @@ body {
   border-top: inherit;
   border-left: inherit;
   border-right: inherit;
-  border-color: #019df4;
+  border-color: $color_2;
   border-width: 2px;
   background-color: inherit;
   border-radius: inherit;
@@ -59,7 +59,7 @@ body {
 }
 
 .nav > .nav-links > a:hover {
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: $color_2;
 }
 
 .nav > #nav-check {

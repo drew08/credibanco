@@ -17,8 +17,7 @@ import { PrevDirective } from 'src/app/shared/prev.directive';
 })
 export class ProductComponent implements OnInit {
   searchKey: string = "";
-  public page!: number;
-
+  selectedIndex: number = -1;
   filterPost = '';
   productList: any;
   categoriesList: any;
@@ -49,7 +48,6 @@ export class ProductComponent implements OnInit {
         console.error('error service')
       }
     );
-
   }
 
 
@@ -66,8 +64,9 @@ export class ProductComponent implements OnInit {
 
   }
 
-  getProductsInCategory(product: string) {
+  getProductsInCategory(product: string, index: number) {
     debugger;
+    this.selectedIndex = index;
     this.dataService.getProductsInCategory(product).subscribe((result: any) => {
       this.productList = result;
     },
@@ -75,13 +74,10 @@ export class ProductComponent implements OnInit {
         console.error('error service')
       }
     );
-
   }
 
   addtocart(item: any) {
     this.cartService.addtoCart(item);
   }
-
-
 
 }
