@@ -1,0 +1,55 @@
+<header>
+  <!-- <div class="bar">
+    <div class="container">
+      <div class="padding-left">
+        <h1><i class="fa fa-rocket"></i> <span class="highlight">prueba</span> tecnica</h1>
+      </div>
+      <nav>
+        <ul>
+          <li class="current"><a href="">Edit</a></li>
+        </ul>
+        <ul>
+          <div class="form-inline p-2">
+            <input class="form-control inputStyle" type="text" name="searchTerm" [(ngModel)]="searchTerm"
+              (keyup)="search($event)" placeholder="Buscar" aria-label="Buscar">
+          </div>
+          <div>
+            <button routerLink="cart" class="btn btn-primary">
+              <span style="color: rgb(0, 128, 55); border-style: solid; border-radius: 12%;"
+                class="material-icons">shopping_cart</span>
+              <div style="font-size: 10px;" class="badge bg-danger">{{totalCount}}</div>
+            </button>
+          </div>
+        </ul>
+      </nav>
+    </div>
+  </div> -->
+  <div class="nav">
+    <input type="checkbox" id="nav-check">
+    <div class="nav-header">
+      <div class="nav-title">
+        Prueba Tecnica
+      </div>
+    </div>
+    <div class="nav-input">
+      <div class="form-inline p-2">
+        <input class="form-control inputStyle" type="text" name="searchTerm" [(ngModel)]="searchTerm"
+          (keyup)="search($event)" placeholder="Buscar" aria-label="Buscar por titulo">
+      </div>
+    </div>
+    
+    <div class="nav-links">
+      <a href="#" target="_blank">Editar</a>
+    </div>
+
+    <div class="nav-cart">
+      <div routerLink="cart" class="cart-link">
+        <span  class="material-icons cartIcon">shopping_cart</span>
+        <div style="font-size: 10px;" class="numberCart ">{{totalCount}}</div>
+      </div>
+    </div>
+
+  </div>
+
+
+</header>

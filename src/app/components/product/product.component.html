@@ -1,0 +1,53 @@
+ <div class="container padding-top">
+    <div class="row-card">
+
+      <div class="columns padding-top" *ngFor="let product of productList | filter:searchKey:'title'   ; let ind=index">
+            <div class="card  text-dark" >             
+                <img src={{product.image}} class="img-fluid card-img" alt="Responsive Card image cap">                   
+                <div class="d-flex overlay-text image-box">
+                    <label class="card-data-label">#:</label>
+                    <p class="card-data-text ">&nbsp;{{product.id }}</p>
+                </div>       
+                <div class="card-body">
+                    <div class="card-title">
+                        <p class="card-text-name">{{product.title | uppercase }}</p>
+                    </div>
+                    <div class="card-data">
+                        <div class="d-flex ">
+                            <p class="card-data-text card--desc ">&nbsp;{{product?.description}}</p>
+                        </div>
+                        <div class="d-flex padding-top">
+                            <label class="card-data-label price">Price: </label>
+                            <p class="card-data-text card--price">&nbsp;${{product?.price}}</p>
+                        </div>
+                    </div>
+                    <div class="padding-top">
+                         <button type="button" (click)=addtocart(product) class="card-btn  btn">Add<span>&rarr;</span></button>
+                    </div>
+                </div>
+            </div>
+      </div>
+     
+    </div>
+    <div class="button-area">
+        <button type="button" class="prev control-btn" appPrev>Prev</button>   
+        <button type="button" class="next control-btn" appNext>Next</button>   
+    </div>
+  
+  </div> 
+
+<!-- <section class="product-sec">
+    <div class="container">
+        <div class="slider-wrap">
+            <div class="slider-main">
+                <div class="product" *ngFor="let product of productList | filter:searchKey:'title'   ; let ind=index">  
+                        <div  class="text">{{product.id }}</div>
+                </div>
+            </div>
+        </div>
+        <div class="button-area">
+            <button type="button" class="prev" appPrev>Prev</button>   
+            <button type="button" class="next" appNext>Next</button>   
+        </div>
+    </div>
+</section> -->
