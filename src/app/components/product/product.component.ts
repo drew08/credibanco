@@ -32,6 +32,7 @@ export class ProductComponent implements OnInit {
  
     this.getData();
     this.search();
+    this.getAllCategories();
  
    }
  
@@ -45,8 +46,19 @@ export class ProductComponent implements OnInit {
     debugger;
      this.dataService.getData().subscribe((result:any)=>
      {
-      debugger;
        this.productList = result;
+       console.log(result);
+     });
+     
+   }
+
+
+   getAllCategories(){
+    debugger;
+     this.dataService.getAllCategories().subscribe((result:any)=>
+     {
+      debugger;
+       let cat = result;
        
        debugger;
        console.log(result);
@@ -55,7 +67,6 @@ export class ProductComponent implements OnInit {
    }
  
    addtocart(item: any){
-     debugger;
      this.cartService.addtoCart(item);
    }
 

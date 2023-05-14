@@ -14,10 +14,21 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements OnInit, DoCheck {
   public totalCount : number = 0;
   public searchTerm : string = '';
-  constructor (private dataService : DataService, private cartService:CartService){}
+  isMenuVisible = true;
+  constructor (private dataService : DataService, private cartService:CartService, private route: Router){}
+
+  ngDoCheck(): void {
+    let currentroute = this.route.url;
+    debugger;
+    if (currentroute == '/home' || currentroute == "/") {
+      this.isMenuVisible = true
+    } else {
+      this.isMenuVisible = false
+    }
+  }
  
   ngOnInit(): void {
     this.cartService.getProducts().subscribe(res =>{
