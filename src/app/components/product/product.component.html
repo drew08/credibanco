@@ -8,7 +8,7 @@
 </div>
 
 <div class="container padding-top">
-    <div class="row-card">
+    <div #asCards id="cards" class="row-card">
 
         <div class="columns padding-top"
             *ngFor="let product of productList | filter:searchKey:'title'   ; let ind=index">
@@ -32,8 +32,7 @@
                         </div>
                     </div>
                     <div class="padding-top">
-                        <button type="button" (click)=addtocart(product)
-                            class="card-btn  btn">Add<span>&rarr;</span></button>
+                        <button type="button" (click)=addtocart(product)  class="card-btn  btn">Add<span>&rarr;</span></button>
                     </div>
                 </div>
             </div>

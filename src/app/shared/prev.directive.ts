@@ -11,6 +11,8 @@ export class PrevDirective {
   @HostListener('click')
   prevFunc(){
     debugger;
+
+    
     var elm = this.el.nativeElement.parentElement.parentElement.children[0];
     var item = elm.getElementsByClassName("columns");
     elm.prepend(item[item.length - 1]);
